@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+Locker System Simulation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains both the frontend React application and the backend PHP service for a Locker System Simulation.
+Setup Instructions
 
-## Available Scripts
+Prerequisites
 
-In the project directory, you can run:
+    Node.js and npm installed
+    PHP installed (e.g., via XAMPP, WAMP, or LAMP)
+    MySQL database server running
+    PHPMyAdmin for database management
 
-### `npm start`
+Step 1: Clone the Repository
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Clone this repository to your local machine.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+git clone <repository_url>
+cd locker-system
 
-### `npm test`
+Step 2: Setup Backend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Copy the api.php file from the backend/ folder and paste it into the htdocs/locker-app-backend directory. Create the directory if it does not exist.
 
-### `npm run build`
+cp backend/api.php /path_to_xampp/htdocs/locker-app-backend/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Step 3: Setup Database
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Set up the database tables using PHPMyAdmin or via the MySQL command line:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    Create a database named locker_db.
+    Import the backend/locker_db.sql file into the newly created database.
+        Using PHPMyAdmin:
+            Open PHPMyAdmin.
+            Create a new database named locker_db.
+            Select the locker_db database.
+            Use the Import tab to upload and import the backend/locker_db.sql file.
+        Using MySQL command line:
+            mysql -u root -p
+            CREATE DATABASE locker_db;
+            USE locker_db;
+            SOURCE path/to/backend/locker_db.sql;
 
-### `npm run eject`
+Step 4: Setup Frontend
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Open a terminal and navigate to the frontend directory.
+    cd locker-system
+Install the necessary npm packages.
+    npm install
+Start the React development server.
+    npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Step 5: Ensure Backend Services are Running
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Make sure the Apache server and MySQL database server are running. This can be done using XAMPP, WAMP, or LAMP, assuming you are running on the default ports for PHP (80) and MySQL (3306).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Step 6: Access the Application
 
-## Learn More
+Open your web browser and navigate to:
+    http://localhost:3000
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You will be presented with the Locker System Simulation application.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This README provides a detailed and professional guide for setting up and running the Locker System Simulation application, ensuring clarity and ease of use.
